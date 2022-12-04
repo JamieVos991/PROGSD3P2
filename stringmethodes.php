@@ -61,15 +61,15 @@ if (isset($_POST['submit'])) {
      */
 
     echo "<br>";
-    echo ucfirst($naam);
+    echo ucfirst(strtolower($naam));
     echo "<br>";
-    echo ucfirst($straat);
+    echo ucfirst(strtolower($straat));
     echo "<br>";
-    echo ucfirst($huisnummer);
+    echo strtolower($huisnummer);
     echo "<br>";
-    echo ucfirst($postcode);
+    echo strtolower($postcode);
     echo "<br>";
-    echo ucfirst($woonplaats);
+    echo ucfirst(strtolower($woonplaats));
 
     /*
      * OPDRACHT 5:
