@@ -24,6 +24,7 @@
     <input type=text name="woonplaats" required placeholder="Woonplaats">><br><br>
 
     <input type="submit" name="submit" value="verzenden" >
+    <script>alert('Niet beveiligd tegen script-injections')</script>
 </form>
 
 <?php
@@ -33,7 +34,7 @@ if (isset($_POST['submit'])) {
     /*
      * OPDRACHT 1:
      * Voer onderstaande code in het naamveld in en kijk wat er gebeurd
-     * <script>alert('Niet beveiligd tegen script-injections')</script>
+     * 
      */
 
     /*
@@ -57,13 +58,9 @@ if (isset($_POST['submit'])) {
      * Alle andere letters moeten kleine letters zijn
      * Hiervoor gebruik je de functie strtolower()
      */
-    echo
-        $naam, '<br>',
-        $straat, '<br>',
-        $huisnummer, '<br>',
-        $postcode, '<br>',
-        $woonplaats, '<br>';
 
+    echo htmlspecialchars($naam, '<br>', $straat, '<br>', $huisnummer, '<br>', $postcode, '<br>', $woonplaats, '<br>');
+    
     /*
      * OPDRACHT 5:
      * Check of het ingevoerde huisnummer werkelijk een nummer is.
