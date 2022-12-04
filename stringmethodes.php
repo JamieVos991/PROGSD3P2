@@ -12,19 +12,18 @@
     <input type="text" name="naam" required placeholder="Naam"><br><br>
 
     <label for="straat">Straat:</label><br>
-    <input type=text name="straat" required placeholder="Straat">><br><br>
+    <input type=text name="straat" required placeholder="Straat"><br><br>
 
     <label for="huisnummer">Huisnummer:</label><br>
-    <input type=text name="huisnummer" required placeholder="Huisnummer">><br><br>
+    <input type=text name="huisnummer" required placeholder="Huisnummer"><br><br>
 
     <label for="postcode">Postcode:</label><br>
-    <input type=text name="postcode" required placeholder="Postcode">><br><br>
+    <input type=text name="postcode" required placeholder="Postcode"><br><br>
 
     <label for="woonplaats">Woonplaats:</label><br>
-    <input type=text name="woonplaats" required placeholder="Woonplaats">><br><br>
+    <input type=text name="woonplaats" required placeholder="Woonplaats"><br><br>
 
     <input type="submit" name="submit" value="verzenden" >
-    <script>alert('Niet beveiligd tegen script-injections')</script>
 </form>
 
 <?php
@@ -34,7 +33,7 @@ if (isset($_POST['submit'])) {
     /*
      * OPDRACHT 1:
      * Voer onderstaande code in het naamveld in en kijk wat er gebeurd
-     * 
+     * <script>alert('Niet beveiligd tegen script-injections')</script>
      */
 
     /*
@@ -43,12 +42,14 @@ if (isset($_POST['submit'])) {
      * Hiervoor gebruik je de functie htmlspecialchars().
      * Pas elke ingevoerde variabele waarde aan met de functie htmlspecialchars().
      */
-    $naam = $_POST['naam'];
-    $straat = $_POST['straat'];
-    $huisnummer = $_POST['huisnummer'];
-    $postcode = $_POST['postcode'];
-    $woonplaats = $_POST['woonplaats'];
 
+    $naam = htmlspecialchars($_POST['naam']);
+    $straat = htmlspecialchars($_POST['straat']);
+    $huisnummer = htmlspecialchars($_POST['huisnummer']);
+    $postcode = htmlspecialchars($_POST['postcode']);
+    $woonplaats = htmlspecialchars($_POST['woonplaats']);
+
+    echo $input;
     /*
      * OPDRACHT 3:
      * Zorg ervoor dat de naam, straat en woonplaats met een hoofdletter beginnen
@@ -59,8 +60,17 @@ if (isset($_POST['submit'])) {
      * Hiervoor gebruik je de functie strtolower()
      */
 
-    echo htmlspecialchars($naam, '<br>', $straat, '<br>', $huisnummer, '<br>', $postcode, '<br>', $woonplaats, '<br>');
-    
+    echo "<br>";
+    echo ucfirst($naam);
+    echo "<br>";
+    echo ucfirst($straat);
+    echo "<br>";
+    echo ucfirst($huisnummer);
+    echo "<br>";
+    echo ucfirst($postcode);
+    echo "<br>";
+    echo ucfirst($woonplaats);
+
     /*
      * OPDRACHT 5:
      * Check of het ingevoerde huisnummer werkelijk een nummer is.
