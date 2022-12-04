@@ -32,15 +32,11 @@ if ($_POST['submit']) {
 
 
     // Controleer of het aantal > 0 is.
-    if ($aantal > 0) { 
+    if ($aantal > 0 & $aantal < 16) { 
         echo 'Gekozen product en totaal prijs';
-        echo "<br> <br> Product: ";
-        echo($product);
-        echo "<br> Aantal in winkelmand: ";
-        echo($aantal);
-        echo "<br> Totaal prijs: ";
-        echo($prijs * $aantal);
-
+        echo "<br> <br> Product: ", $product;
+        echo "<br> Aantal in winkelmand: ", $aantal;
+        echo "<br> Totaal prijs: ", $prijs * $aantal;
     }
 
     /*
