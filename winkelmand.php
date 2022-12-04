@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Winkelmand integer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -31,11 +32,14 @@ if ($_POST['submit']) {
 
 
     // Controleer of het aantal > 0 is.
-    if ($aantal) { 
-
-        // Maak de berekening van de totaal prijs.
-
-        // Maak de teksten zoals gevraagd wordt.
+    if ($aantal > 0) { 
+        echo 'Gekozen product en totaal prijs';
+        echo "<br> <br> Product: ";
+        echo($product);
+        echo "<br> Aantal in winkelmand: ";
+        echo($aantal);
+        echo "<br> Totaal prijs: ";
+        echo($prijs * $aantal);
 
     }
 
