@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
     echo "<br>";
     echo ucfirst(strtolower($straat));
     echo "<br>";
-    echo strtolower($huisnummer);
+    echo is_numeric($huisnummer);
     echo "<br>";
     echo strtolower($postcode);
     echo "<br>";
