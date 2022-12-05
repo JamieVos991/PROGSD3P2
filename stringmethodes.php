@@ -64,12 +64,13 @@ if (isset($_POST['submit'])) {
     echo "<br>";
     echo ucfirst(strtolower($straat));
     echo "<br>";
+
     if (is_numeric($huisnummer)) {
         echo $huisnummer;
     } else {
-        echo "Geen nummer ingevoerd!";
         echo '<script>alert("Huisnummer heeft een nummer nodig...")</script>';
     }
+
     echo "<br>";
     echo strtolower($postcode);
     echo "<br>";
