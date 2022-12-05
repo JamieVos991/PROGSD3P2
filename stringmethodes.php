@@ -49,7 +49,6 @@ if (isset($_POST['submit'])) {
     $postcode = htmlspecialchars($_POST['postcode']);
     $woonplaats = htmlspecialchars($_POST['woonplaats']);
 
-    echo $input;
     /*
      * OPDRACHT 3:
      * Zorg ervoor dat de naam, straat en woonplaats met een hoofdletter beginnen
@@ -65,7 +64,12 @@ if (isset($_POST['submit'])) {
     echo "<br>";
     echo ucfirst(strtolower($straat));
     echo "<br>";
-    echo is_numeric($huisnummer);
+    if (is_numeric($huisnummer)) {
+        echo $huisnummer;
+    } else {
+        echo "Geen nummer ingevoerd!";
+        echo '<script>alert("Huisnummer heeft een nummer nodig...")</script>';
+    }
     echo "<br>";
     echo strtolower($postcode);
     echo "<br>";
