@@ -5,7 +5,7 @@ $aanhef = array(
     "persoon" => "Klant");
 
 $korting = array(
-    "product" => "U heeft in de voorgaande bestelling voor [[product]] gekozen",
+    "product" => "U heeft in de voorgaande bestelling voor [[products]] gekozen",
     "korting" => "Bij Uw volgende bestelling kunnen we U een korting van 10% aanbieden op hetzelfde product"
 );
 
@@ -22,7 +22,7 @@ $ondertekening = array(
  */
 
 echo '<pre>';
-  var_dump($aanhef, $korting, $ondertekening);
+  var_dump(print_r($aanhef), print_r ($korting), print_r($ondertekening), print_r($replace));
 echo '</pre>';
  
 
@@ -38,13 +38,23 @@ echo '</pre>';
  * Gebruik hiervoor de methode str_replace().
  */
 
+  $replace = array_replace($korting, ['product' => 'U heeft in de voorgaande bestelling voor Chocoladereep gekozen']);
+
+ 
+
 /*
  * Opdracht 4:
  * Voeg nu alle arrays samen in een nieuwe array die je $aanbieding noemt.
  * Gebruik hiervoor de methode array_merge()
  */
 
+ $aanbieding = (array_merge($korting, $replace));
+
 /*
  * Opdracht 5:
  * Toon de inhoud van de nieuwe array $aanbieding
  */
+
+print '<pre>';
+print_r($aanbieding);
+print '<pre>';
