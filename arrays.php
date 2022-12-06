@@ -21,6 +21,11 @@ $ondertekening = array(
  * Gebruik daarvoor de functies var_dump() en print_r()
  */
 
+echo '<pre>';
+  var_dump($aanhef, $korting, $ondertekening);
+echo '</pre>';
+ 
+
 /*
  * Opdracht 2:
  * Vervang de waarde van persoon, in de array aanhef naar 'klant'

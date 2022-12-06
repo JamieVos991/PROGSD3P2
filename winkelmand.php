@@ -17,7 +17,7 @@ echo 'Prijs: ' . $prijs;
     <label for="product">Product:</label><br>
     <input type="text" name="product" required placeholder="product"><br>
     <label for="aantal">Aantal:</label><br>
-    <input type=number name="aantal" required placeholder="aantal">><br><br>
+    <input type=number name="aantal" required placeholder="aantal"><br><br>
     <input type="submit" name="submit" value="toevoegen" >
 </form>
 <p>Vul je geen action in dan wordt het formulier verwerkt door de huidige pagina".</p>
@@ -37,6 +37,10 @@ if ($_POST['submit']) {
         echo "<br> <br> Product: ", $product;
         echo "<br> Aantal in winkelmand: ", $aantal;
         echo "<br> Totaal prijs: ", $prijs * $aantal;
+    }
+
+    if ($aantal > 15) {
+        echo '<script>alert("Huisnummer heeft een nummer nodig...")</script>';
     }
 
     /*
