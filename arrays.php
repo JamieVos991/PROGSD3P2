@@ -20,11 +20,21 @@ $ondertekening = array(
  * Laat de inhoud van alle arrays zien
  * Gebruik daarvoor de functies var_dump() en print_r()
  */
+ 
+echo '<pre>';
+  print_r ($aanhef);
+  echo '</pre>';
+echo "<br>";
 
 echo '<pre>';
-  var_dump(print_r($aanhef), print_r ($korting), print_r($ondertekening));
-echo '</pre>';
- 
+  print_r(str_replace("[[products]]", "Chocoladereep", $korting));
+  echo '</pre>';
+echo "<br>";
+
+echo '<pre>';
+  print_r ($ondertekening);
+  echo '</pre>';
+echo "<br>";
 
 /*
  * Opdracht 2:
@@ -37,11 +47,6 @@ echo '</pre>';
  * Vervang het woord [[product]] door jouw gekozen product in de winkelmand opdracht
  * Gebruik hiervoor de methode str_replace().
  */
-
-  $replace = str_replace($korting, ['product' => 'asd']);
-
-  var_dump($replace);
-
  
 
 /*
@@ -49,14 +54,19 @@ echo '</pre>';
  * Voeg nu alle arrays samen in een nieuwe array die je $aanbieding noemt.
  * Gebruik hiervoor de methode array_merge()
  */
+  
+ $aanbieding = (array_merge([$aanhef] , [$korting], [$ondertekening]));
 
- $aanbieding = (array_merge($korting, $replace));
 
 /*
  * Opdracht 5:
  * Toon de inhoud van de nieuwe array $aanbieding
  */
 
-print '<pre>';
-print_r($aanbieding);
-print '<pre>';
+
+foreach ($aanbieding as $aanbieding) {
+  echo "<br>";
+  echo '<pre>';
+  print_r (str_replace("[[products]]", "Chocoladereep", $aanbieding));
+  echo '</pre>';
+}
