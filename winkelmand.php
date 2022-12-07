@@ -38,11 +38,10 @@ if (isset ($_POST['submit'])  ) {
         echo "<br> <br> Product: ", $product;
         echo "<br> Aantal in winkelmand: ", $aantal;
         echo "<br> Totaal prijs: ", $prijs * $aantal;
+    } else {
+        echo '<script>alert("Kan niet meer dan 15 producten toevoegen...")</script>';
     }
 
-    if ($aantal > 15) {
-        echo '<script>alert("Huisnummer heeft een nummer nodig...")</script>';
-    }
 
     /*
      * Werkt je formulier pas dan het formulier aan zodat je geen
