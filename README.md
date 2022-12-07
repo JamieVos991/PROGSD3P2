@@ -1,3 +1,3 @@
-<h1>SKILL</h1>
+<h2>SKILL 🔧</h2>
 
-<h2>Klik de branches voor de opdrachten ^</h2>
+<p>Klik de branches voor de opdrachten ^</p>
