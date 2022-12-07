@@ -22,7 +22,7 @@ $ondertekening = array(
  */
 
 echo '<pre>';
-  var_dump(print_r($aanhef), print_r ($korting), print_r($ondertekening), print_r($replace));
+  var_dump(print_r($aanhef), print_r ($korting), print_r($ondertekening));
 echo '</pre>';
  
 
@@ -38,7 +38,9 @@ echo '</pre>';
  * Gebruik hiervoor de methode str_replace().
  */
 
-  $replace = array_replace($korting, ['product' => 'U heeft in de voorgaande bestelling voor Chocoladereep gekozen']);
+  $replace = str_replace($korting, ['product' => 'asd']);
+
+  var_dump($replace);
 
  
 

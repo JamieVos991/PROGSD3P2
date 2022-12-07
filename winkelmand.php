@@ -25,7 +25,8 @@ echo 'Prijs: ' . $prijs;
 <?php
 
 // Controleer of het formulier is verstuurd
-if ($_POST['submit']) {
+
+if (isset ($_POST['submit'])  ) {
 
     $product = $_POST['product'];
     $aantal = $_POST['aantal'];
